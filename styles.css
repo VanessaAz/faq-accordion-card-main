@@ -1,0 +1,137 @@
+*, 
+::before, 
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: hsl(238, 29%, 16%);
+    --secundary-color: hsl(14, 88%, 65%);
+    --dark-blue: hsl(240, 6%, 50%); 
+    --dividers: hsl(240, 5%, 91%);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2em;
+    color: var(--primary-color);
+}
+
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 0.75rem;
+    padding: 2em 1em;
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+main {
+    max-width: 350px;
+    border-radius: 1em;
+    padding: 2em;
+    position: relative;
+    background-color: #fff;
+    padding-top: 6em;
+    width: 100%;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    
+}
+
+.main-img{
+    max-width: 80%;
+    position: absolute;
+    top: -30%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 2em;
+}
+
+
+.question {
+    padding: .5em 0;
+    border-bottom: 1px solid var(--dividers);
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.question:hover{
+    color: var(--secundary-color);
+}
+
+.answer {
+  display: none;
+  color: var(--dark-blue);
+}
+
+.show .question {
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.show .arrow {
+    transform: rotate(180deg);
+}
+
+.show .answer {
+    display: block;
+}
+
+.box-img{
+    display: none;
+}
+
+@media (min-width: 800px) {
+    body{
+        font-size: 14px;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 700px;
+        padding-left: 0;
+        padding-top: 1em;
+        padding-bottom: 3em;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-position: -50% 60%;
+        background-size: 400px 400px;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    .main-img{
+        position: relative;
+        object-fit: cover;
+        max-width: 250px;
+        height: 250px;
+        object-position: center right;
+        padding: 0;
+        top: 25%;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .box-img {
+        max-width: 130px;
+        display: block;
+        position: absolute;
+        top: 40%;
+        bottom: 0;
+        margin: auto;
+        left: -10%;
+        z-index: 1;
+    }
+
+    .main-text {
+        padding-right: 2em;
+    }
+}
